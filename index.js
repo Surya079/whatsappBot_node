@@ -34,6 +34,7 @@ client.on("message", (message) => {
   } else if (message.body.toLowerCase() === "bye") {
     message.reply("Goodbye! Have a great day!");
   } else {
+    message.reply("Sorry i did not understand");
     // Here, notify a live agent (e.g., via email or another system)
   }
 });
