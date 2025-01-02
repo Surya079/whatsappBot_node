@@ -1,5 +1,8 @@
+import express from "express";
 import pkg from "whatsapp-web.js";
 import qrcode from "qrcode-terminal";
+
+const app = express();
 // Initialize the client
 const client = new pkg.Client({
   authStrategy: new pkg.LocalAuth(), // Saves your session locally
@@ -34,6 +37,6 @@ client.on("message", (message) => {
     // Here, notify a live agent (e.g., via email or another system)
   }
 });
-
-// Start the client
 client.initialize();
+// Start the client
+app.listen(3006, () => {});
